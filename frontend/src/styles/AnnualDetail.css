@@ -1,0 +1,190 @@
+.annual-detail-wrapper {
+    padding: 20px;
+    background: var(--bg-body);
+    min-height: 100vh;
+}
+
+.annual-header {
+    margin-bottom: 2rem;
+}
+
+.annual-header .title-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.annual-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.year-pill {
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.annual-header .subtitle {
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+.detail-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    gap: 10px;
+}
+
+.annual-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card-annual {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: var(--transition);
+}
+
+.stat-card-annual .icon {
+    width: 60px;
+    height: 60px;
+    padding: 12px;
+    border-radius: 16px;
+    flex-shrink: 0;
+}
+
+.stat-card-annual.gold .icon { background: rgba(255, 184, 0, 0.1); color: #ffb800; }
+.stat-card-annual.blue .icon { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
+.stat-card-annual.purple .icon { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+.stat-card-annual .label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.stat-card-annual .value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.chart-container-annual {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.chart-info {
+    margin-bottom: 2rem;
+}
+
+.chart-info h3 {
+    font-size: 1.3rem;
+    color: var(--text-main);
+    margin: 0;
+}
+
+.chart-info p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.scrollable-chart-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    padding-bottom: 10px;
+}
+
+.scrollable-chart-wrapper:active {
+    cursor: grabbing;
+}
+
+.min-width-chart-container {
+    min-width: 650px;
+    height: 350px;
+}
+
+.annual-loading {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    gap: 1rem;
+}
+
+.annual-btn {
+    background: linear-gradient(135deg, var(--primary), #6366f1);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .annual-detail-wrapper {
+        padding: 15px;
+    }
+
+    .annual-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .stat-card-annual {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .stat-card-annual .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .stat-card-annual .value {
+        font-size: 1.4rem;
+    }
+
+    .chart-container-annual {
+        padding: 1.5rem 1rem;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .annual-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .min-width-chart-container {
+        height: 300px;
+    }
+}

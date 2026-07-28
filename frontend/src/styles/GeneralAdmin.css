@@ -1,0 +1,304 @@
+:root {
+  --primary: #6C72FF;
+  --primary-hover: #5B61E6;
+  --accent-purple: #9A91FB;
+  --accent-blue: #57C3FF;
+  --accent-red: #FF4D4D;
+  --accent-green: #00E396;
+  --accent-orange: #FDB52A;
+  
+  --bg-body: #080F25;
+  --bg-panel: #101935;
+  --bg-input: #16203E;
+  --text-main: #FFFFFF;
+  --text-muted: #7E89AC;
+  --border-color: #212C4D;
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+  --primary-light: rgba(108, 114, 255, 0.1);
+}
+
+[data-theme='light'] {
+  --bg-body: #F4F7FE;
+  --bg-panel: #FFFFFF;
+  --bg-input: #F8FAFC;
+  --text-main: #2B3674;
+  --text-muted: #A3AED0;
+  --border-color: #E0E5F2;
+  --shadow-lg: 0 4px 20px rgba(112, 144, 176, 0.15);
+  --primary-light: rgba(108, 114, 255, 0.08);
+}
+
+.admin-page-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px);
+}
+
+.admin-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title-with-icon h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.icon-main {
+  color: var(--primary);
+}
+
+.header-info p {
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+  font-size: 1rem;
+}
+
+.admin-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.admin-card-option {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.admin-card-option:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--bg-body);
+}
+
+.card-text h3 {
+  color: var(--text-main);
+  margin: 0 0 0.3rem 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.card-text p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.card-arrow {
+  color: var(--text-muted);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.admin-card-option:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(5px);
+  color: var(--primary);
+}
+
+.admin-detail-view {
+  background: var(--bg-panel);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.detail-header {
+  padding: 1.5rem 2rem;
+  background: var(--sidebar-footer-bg);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.detail-header h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text-main);
+}
+
+.back-btn-simple {
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.back-btn-simple:hover {
+  background: var(--primary);
+  color: #FFFFFF;
+  border-color: var(--primary);
+}
+
+.tickets-table-container {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.modern-table th {
+  padding: 1.2rem 1rem;
+  background: var(--bg-input);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.modern-table td {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.modern-table tr:hover td {
+  background: var(--primary-light);
+}
+
+.modern-table tr:last-child td {
+  border-bottom: none;
+}
+
+.ticket-badge {
+  background: rgba(108, 114, 255, 0.1);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 1px solid var(--primary-light);
+}
+
+.user-info-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-cell strong {
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.user-info-cell span {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.desc-cell {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-pill.pending { 
+  background: rgba(253, 181, 42, 0.1); 
+  color: var(--accent-orange);
+  border: 1px solid rgba(253, 181, 42, 0.2);
+}
+
+.status-pill.resolved { 
+  background: rgba(0, 227, 150, 0.1); 
+  color: var(--accent-green);
+  border: 1px solid rgba(0, 227, 150, 0.2);
+}
+
+.placeholder-view {
+  padding: 5rem;
+  text-align: center;
+  background: var(--bg-panel);
+  border-radius: 24px;
+  border: 2px dashed var(--border-color);
+  color: var(--text-muted);
+}
+
+.loading-state {
+  padding: 4rem;
+  text-align: center;
+  color: var(--primary);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.animate-view {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .admin-page-container { padding: 1rem; }
+  .admin-header-main { flex-direction: column; text-align: center; gap: 1rem; }
+  .admin-menu-grid { grid-template-columns: 1fr; }
+  .desc-cell { display: none; }
+  .detail-header { padding: 1rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+}

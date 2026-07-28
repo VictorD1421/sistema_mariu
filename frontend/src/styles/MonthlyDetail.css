@@ -1,0 +1,189 @@
+.monthly-detail-wrapper {
+    padding: 32px;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    min-height: 100vh;
+    transition: var(--transition);
+}
+
+.detail-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    gap: 16px;
+}
+
+.back-button-modern {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 10px 18px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.back-button-modern:hover {
+    background: var(--primary-light);
+    border-color: var(--primary);
+}
+
+.monthly-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.stat-mini-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.stat-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.income-bg { background: rgba(0, 227, 150, 0.1); color: var(--accent-green); }
+.products-bg { background: rgba(87, 195, 255, 0.1); color: var(--accent-blue); }
+.status-bg { background: rgba(154, 145, 251, 0.1); color: var(--accent-purple); }
+
+.stat-label { 
+    font-size: 0.75rem; 
+    color: var(--text-muted); 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 0.05em;
+}
+
+.stat-value { 
+    font-size: 1.75rem; 
+    font-weight: 800; 
+    color: var(--text-main); 
+    display: block;
+}
+
+.analysis-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 24px;
+}
+
+.chart-container-large {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 28px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.scrollable-chart-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scrollable-chart-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.scrollable-chart-wrapper::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+.min-width-chart-container {
+    min-width: 650px;
+    height: 300px;
+}
+
+.insight-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+}
+
+.top-item {
+    background: var(--bg-body);
+    padding: 14px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+    border: 1px solid transparent;
+}
+
+[data-theme='light'] .top-item {
+    border-color: var(--border-color);
+}
+
+.rank-circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #FFFFFF;
+}
+
+.rank-1 { background: var(--accent-orange); }
+.rank-2 { background: var(--text-muted); }
+.rank-3 { background: #A0522D; }
+
+@media (max-width: 1100px) {
+    .analysis-main-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .monthly-detail-wrapper { padding: 20px; }
+    
+    .detail-navigation {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .hide-mobile { display: none; }
+}
+
+@media (max-width: 480px) {
+    .monthly-detail-wrapper { padding: 16px; }
+    
+    .stat-mini-card { 
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .stat-value { font-size: 1.4rem; }
+    
+    .min-width-chart-container {
+        min-width: 500px;
+    }
+}
